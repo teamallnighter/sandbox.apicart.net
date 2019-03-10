@@ -6,3 +6,8 @@
 - The website shows is functionality of all available Apicart components.
 - It is **fully static** and powered by **Github Pages**
 - **Try it now!** With the [https://apicart.net](https://apicart.net) components you can create an e-commerce platform in a **3 steps**, with **zero backend** for a **month price lower than a cup of coffee ☕**!
+
+<h1><a href="https://sandbox.apicart.net">Try it now!</a></h1>
+<a href="https://sandbox.apicart.net">
+<img src="https://raw.githubusercontent.com/apicart/sandbox.apicart.net/master/assets/images/sandbox-screenshot.png" alt="Apicart sandbox preview"
+</a>
