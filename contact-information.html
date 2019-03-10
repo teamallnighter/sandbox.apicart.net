@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127787354-2"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-127787354-2');
+	</script>
+
+	<meta charset="UTF-8">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+	<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+	<link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#6154bc">
+	<link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Apicart Sandbox</title>
+	<meta name="description" content="Example of whole shopping process with Apicart!">
+
+	<meta property="og:image" content="https://sandbox.apicart.net/assets/images/apicart-image.png">
+	<meta property="og:title" content="Apicart Sandbox"/>
+	<meta property="og:url" content="https://sandbox.apicart.net/"/>
+	<meta property="og:site_name" content="Apicart Sandbox"/>
+	<meta property="og:type" content="website"/>
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="https://sandbox.apicart.net/">
+	<meta name="twitter:title" content="Apicart Sandbox">
+	<meta name="twitter:description" content="Examples of all apicart components on one page!">
+	<meta name="twitter:image" content="https://sandbox.apicart.net/assets/images/apicart-image.png">
+	<meta name="twitter:site" content="@apicartapp">
+	<meta name="twitter:creator" content="@apicartapp">
+</head>
+<body>
+	<link rel="stylesheet" href="/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="/assets/css/sandbox.css">
+
+	<header class="top-header">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header w-100 d-inline-flex align-items-center justify-content-between">
+					<h1>
+						<img class="logo align-middle" src="/assets/images/apicart-image.png" alt="">
+						<a href="/" class="logo-text align-middle">
+							Sandbox
+						</a>
+					</h1>
+					<div class="cart-dropdown"></div>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<div class="my-3 cart-crumbtrail d-flex justify-content-around">
+			<a href="/cart-overview.html" class="cart-crumbtrail-step"><i class="fa fa-lg fa-shopping-cart"></i><span class="d-none d-md-inline-block ml-2 cart-crumbtrail-step-label">Recapitulation</span></a>
+			<a href="/payment-and-delivery.html" class="cart-crumbtrail-step"><i class="fa fa-lg fa-truck"></i><span class="d-none d-md-inline-block ml-2 cart-crumbtrail-step-label">Payment and delivery</span></a>
+			<a role="button" class="cart-crumbtrail-step"><i class="fa fa-lg fa-envelope"></i><span class="d-none d-md-inline-block ml-2 cart-crumbtrail-step-label">Contact information</span></a>
+		</div>
+
+		<div class="white-block">
+			<h2 class="mb-3">Contact information</h2>
+			<form>
+				<p>
+					<label for="shipping-address-email">E-mail</label>
+					<input id="shipping-address-email" type="email" class="form-control" data-bind="cart.customer.email" data-apicart-cart-add-parameter="shippingAddress.email">
+				</p>
+
+				<p class="row">
+					<span class="col">
+						<label for="shipping-address-first-name">Name</label>
+						<input id="shipping-address-first-name" type="text" class="form-control" data-bind="cart.customer.firstName" data-apicart-cart-add-parameter="shippingAddress.firstName">
+					</span>
+					<span class="col">
+						<label for="shipping-address-last-name">Surname</label>
+						<input id="shipping-address-last-name" type="text" class="form-control" data-bind="cart.customer.lastName" data-apicart-cart-add-parameter="shippingAddress.lastName">
+					</span>
+				</p>
+
+				<p>
+					<label for="shipping-address-street-and-number">Street and number</label>
+					<input id="shipping-address-street-and-number" type="text" class="form-control" data-bind="cart.payment.streetAndNumber" data-apicart-cart-add-parameter="shippingAddress.streetAndNumber">
+				</p>
+
+				<p class="row">
+					<span class="col">
+						<label>Town</label>
+						<input type="text" class="form-control" data-bind="cart.payment.town" data-apicart-cart-add-parameter="shippingAddress.city">
+					</span>
+					<span class="col">
+						<label>Zip</label>
+						<input type="number" class="form-control" data-bind="cart.payment.zip" data-apicart-cart-add-parameter="shippingAddress.zip">
+					</span>
+				</p>
+			</form>
+
+			<div class="d-flex justify-content-center justify-content-md-between flex-wrap">
+				<a href="/payment-and-delivery.html" class="col-10 col-md-4 col-lg-3 m-0 mb-2 mb-md-0 btn btn-outline-secondary"><i class="fa fa-chevron-circle-left mr-1"></i> Payment and delivery</a>
+				<button class="col-10 col-md-4 col-lg-2 m-0 btn btn-danger apicart-cart-finish">Finish Order <i class="fa fa-chevron-circle-right ml-1"></i></button>
+			</div>
+		</div>
+
+		<div class="white-block">
+			<h2 id="behind-the-scene" class="mb-3">Behind the scene</h2>
+
+			<div><strong>Global configuration</strong></div>
+			<pre class="mb-3"><code class="language-html">
+				&lt;script&gt;
+					window.apicartConfig = window.apicartConfig || [];
+					function apicartConfigure(config){apicartConfig.push(config)}
+					apicartConfigure({
+						token: "1234567890",
+						currencySymbol: '$',
+						currencySymbolPositionLeft: true,
+						currencySymbolWithSpace: false
+					});
+				&lt;/script&gt;
+			</code></pre>
+
+			<div><strong>Cart Dropdown</strong></div>
+			<pre class="mb-3"><code class="language-html">
+				&lt;script&gt;
+					...
+					apicartConfigure({
+						...
+						init: function () {
+							apicart.cartDropdown.render({
+								el: '.cart-dropdown',
+								showQuantityManipulator: true,
+								removalButton: '&lt;i class=&quot;fa fa-times-circle&quot; data-apicart-cart-remove-item=&quot;%dataUrl%&quot; role=&quot;button&quot;&gt;&lt;/i&gt;',
+								toggleButton: '&lt;i class=&quot;fa fa-shopping-cart fa-lg cursor-pointer&quot;&gt;&lt;/i&gt; &lt;strong class=&quot;cart-dropdown-items-count&quot;&gt;%itemsCount%&lt;/strong&gt;',
+								infoBlock: '&lt;strong&gt;%name%&lt;/strong&gt;',
+								footerBlocks: [
+									function (itemsCount, itemsPrice) {
+										return '&lt;div class=&quot;text-left&quot;&gt;Number of items: ' + itemsCount + '&lt;br&gt;Total price: '
+													+ Brackets.getFilter('currency').call(null, itemsPrice);
+												+ '&lt;/div&gt;';
+									},
+									'&lt;div class=&quot;text-right&quot;&gt;&lt;a href=&quot;/cart-overview.html&quot; class=&quot;btn btn-danger&quot;&gt;Finish Order&lt;i class=&quot;fa fa-chevron-circle-right ml-1&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;'
+								]
+							});
+						}
+					});
+				&lt;/script&gt;
+			</code></pre>
+
+			<div><strong>Add item to basket forms</strong></div>
+			<pre class="mb-3"><code class="language-html">
+				&lt;script&gt;
+					...
+					apicartConfigure({
+						...
+						init: function () {
+							...
+							var quantityManipulators = document.querySelectorAll('.quantity-manipulator');
+							Utils.loops.forEach(quantityManipulators, function (key, quantityManipulator) {
+								apicart.cartQuantityManipulator.render({
+									el: quantityManipulator,
+									itemUrl: quantityManipulator.getAttribute('data-item-url'),
+									submitButton: 'Add to Cart'
+								})
+							});
+						}
+					});
+				&lt;/script&gt;
+			</code></pre>
+
+			<div><strong>Popup - item added to basket</strong></div>
+			<pre class="mb-4"><code class="language-html">
+				&lt;script&gt;
+					...
+					apicartConfigure({
+						...
+						init: function () {
+							...
+							Utils.eventDispatcher.addListener('item-added-popup', apicart.cart.events.ITEM_ADDED, function (item) {
+								var popup = $('#add-to-cart-modal');
+								popup.find('.modal-title').html('Cart updated 🎉️');
+								popup.find('.modal-body').html('<strong>' + item.name + '</strong> was successfully added into the cart!');
+								popup.modal('show');
+							});
+						}
+					});
+				&lt;/script&gt;
+			</code></pre>
+
+			<div><strong>Order recapitulation</strong></div>
+			<pre class="mb-4"><code class="language-html">
+				&lt;script&gt;
+					...
+					apicartConfigure({
+						...
+						init: function () {
+							...
+							apicart.cartOverview.render({
+								el: '.cart-overview',
+								showQuantityManipulator: true,
+								infoBlocks: [
+									'&lt;strong&gt;%name%&lt;/strong&gt;'
+								],
+								footerBlocks: [
+									function (itemsCount, itemsPrice) {
+										return '&lt;p class=&quot;text-right&quot;&gt;Total price: ' + Brackets.getFilter('currency').call(null, itemsPrice) + '&lt;/p&gt;';
+									},
+									'&lt;div class=&quot;text-right&quot;&gt;&lt;a href=&quot;/payment-and-delivery.html&quot; class=&quot;btn btn-danger&quot;&gt;Payment and delivery &lt;i class=&quot;fa fa-chevron-circle-right ml-1&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;'
+								]
+							});
+						}
+					});
+				&lt;/script&gt;
+			</code></pre>
+
+			<div><strong>Payment and delivery fields</strong></div>
+			<pre class="mb-4"><code class="language-html">
+				&lt;select id=&quot;shipping-methods&quot; class=&quot;custom-select&quot; data-bind=&quot;cart.shippingMethod&quot; data-apicart-cart-add-parameter=&quot;shippingMethod.id&quot;&gt;
+					&lt;option disabled selected&gt;---&lt;/option&gt;
+					{{foreach shippingMethods as shippingMethod}}
+						{{returnIf ! shippingMethod.all.enabled}}
+
+						&lt;option value=&quot;{{$shippingMethod.all.id}}&quot;&gt;{{$shippingMethod.all.name}}&lt;/option&gt;
+					{{/foreach}}
+				&lt;/select&gt;
+				&lt;select id=&quot;payment-methods&quot; class=&quot;custom-select&quot; data-bind=&quot;cart.paymentMethod&quot; data-apicart-cart-add-parameter=&quot;paymentMethod.id&quot;&gt;
+					&lt;option disabled selected&gt;---&lt;/option&gt;
+					{{foreach paymentMethods as paymentMethod}}
+						{{returnIf ! paymentMethod.all.enabled}}
+
+						&lt;option value=&quot;{{$paymentMethod.all.id}}&quot;&gt;{{$paymentMethod.all.name}}&lt;/option&gt;
+					{{/foreach}}
+				&lt;/select&gt;
+				&lt;script&gt;
+					...
+					apicartConfigure({
+						...
+						init: function () {
+							...
+							apicart.paymentMethods.manager.getPaymentMethods(null, function (responseIsOk, response) {
+								Brackets.render({
+									el: '#payment-methods',
+									data: {
+										paymentMethods: responseIsOk ? response.data.findPaymentMethods.paymentMethods : null
+									}
+								});
+
+								Utils.dataBinder.bindData(true);
+							});
+
+							apicart.shippingMethods.manager.getShippingMethods(null, function (responseIsOk, response) {
+								Brackets.render({
+									el: '#shipping-methods',
+									data: {
+										shippingMethods: responseIsOk ? response.data.findShippingMethods.shippingMethods : null
+									}
+								});
+
+								Utils.dataBinder.bindData(true);
+							});
+						}
+					});
+				&lt;/script&gt;
+			</code></pre>
+
+			<div><strong>Contact information fields</strong></div>
+			<pre class="mb-4"><code class="language-html">
+				&lt;input type=&quot;email&quot; class=&quot;form-control&quot; data-bind=&quot;cart.customer.email&quot; data-apicart-cart-add-parameter=&quot;shippingAddress.email&quot;&gt;
+				&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-bind=&quot;cart.customer.firstName&quot; data-apicart-cart-add-parameter=&quot;shippingAddress.firstName&quot;&gt;
+				&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-bind=&quot;cart.customer.lastName&quot; data-apicart-cart-add-parameter=&quot;shippingAddress.lastName&quot;&gt;
+				&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-bind=&quot;cart.payment.streetAndNumber&quot; data-apicart-cart-add-parameter=&quot;shippingAddress.streetAndNumber&quot;&gt;
+				&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-bind=&quot;cart.payment.town&quot; data-apicart-cart-add-parameter=&quot;shippingAddress.city&quot;&gt;
+				&lt;input type=&quot;number&quot; class=&quot;form-control&quot; data-bind=&quot;cart.payment.zip&quot; data-apicart-cart-add-parameter=&quot;shippingAddress.zip&quot;&gt;
+			</code></pre>
+
+			<div><strong>Sent order button</strong></div>
+			<pre class="mb-4"><code class="language-html">
+				&lt;script&gt;
+					...
+					apicartConfigure({
+						...
+						init: function () {
+							...
+							Utils.eventDispatcher.addListener('cart-finished', apicart.cart.events.FINISHED, function (ok) {
+								var popup = $('.modal');
+								popup.find('.modal-title').html('Order sent 🎉️️');
+								popup.find('.modal-body').html('&lt;p class=&quot;text-center&quot;&gt;&lt;strong&gt;Your order has been successfully sent!️️&lt;/strong&gt;&lt;/p&gt;&lt;div class=&quot;text-center&quot;&gt;&lt;small&gt;&lt;i&gt;You will be redirected&lt;/i&gt;&lt;/small&gt;&lt;/div&gt;');
+								popup.modal('show');
+								setTimeout(function () {
+									Utils.dataBinder.removeData('cart');
+									window.location.href = &quot;/&quot;
+								}, 3000);
+							});
+						}
+					});
+				&lt;/script&gt;
+			</code></pre>
+			<pre class="mb-4"><code class="language-html">
+				&lt;button class=&quot;btn btn-danger apicart-cart-finish&quot;&gt;Finish Order &lt;i class=&quot;fa fa-chevron-circle-right ml-1&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+			</code></pre>
+
+			<div><strong>Empty cart flash messages</strong></div>
+			<pre class="mb-4"><code class="language-html">
+				&lt;script&gt;
+					...
+					apicartConfigure({
+						...
+						init: function () {
+							...
+							redirectIfCartIsEmpty();
+
+							Utils.eventDispatcher.addListener('empty-cart', apicart.cart.events.UPDATED, function () {
+								redirectIfCartIsEmpty();
+							});
+
+							function redirectIfCartIsEmpty() {
+								if ( ! apicart.cart.manager.hasItems()) {
+									Utils.flashMessages.addMessage('Your cart is empty 😱!');
+									window.location.href = '/';
+								}
+							}
+						}
+					});
+				&lt;/script&gt;
+			</code></pre>
+			<pre class="mb-4"><code class="language-html">
+				&lt;script&gt;
+					...
+					apicartConfigure({
+						...
+						init: function () {
+							...
+							if (Utils.flashMessages.hasMessages()) {
+								var messages = '';
+
+								Utils.flashMessages.processMessages(function (content) {
+									if (messages) {
+										messages += '&lt;br&gt;';
+									}
+
+									messages += '&lt;div class="text-center"&gt;&lt;strong&gt;' + content + '&lt;/strong&gt;&lt;/div&gt;';
+								});
+
+								var popup = $('#flash-messages-modal');
+								popup.find('.modal-body').html(messages);
+								popup.modal('show');
+							}
+						}
+					});
+				&lt;/script&gt;
+			</code></pre>
+		</div>
+	</main>
+
+	<div class="modal fade" id="add-to-cart-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title"></h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body"></div>
+				<div class="modal-footer d-flex justify-content-center justify-content-md-between flex-wrap">
+					<button type="button" class="col-10 col-md-5 m-0 mb-2 mb-md-0 btn btn-outline-secondary" data-dismiss="modal"><i class="fa fa-chevron-circle-left"></i> Continue shopping</button>
+					<a href="/cart-overview.html" class="col-10 col-md-5 m-0 btn btn-danger">Finish Order <i class="fa fa-chevron-circle-right"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="flash-messages-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body"></div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="finish-order-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title"></h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body"></div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="text-center my-2 my-lg-5">
+		&copy; 2018-2019 <a href="https://apicart.net" target="_blank" rel="noopener">Apicart s.r.o</a>
+	</footer>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link rel="stylesheet" href="/assets/css/prism.css">
+
+	<script src="https://cdn.apicart.net/v1/?components=all" async></script>
+	<script src="/assets/js/jquery.js"></script>
+	<script src="/assets/js/bootstrap.js"></script>
+	<script src="/assets/js/prism.js" async></script>
+	<script src="/assets/js/sandbox.js"></script>
+
+	<script>
+		apicartConfigure({
+			init: function () {
+				window.redirectIfCartIsEmpty();
+
+				Utils.eventDispatcher
+					.addListener('cart-finished', apicart.cart.events.FINISHED, function () {
+						var popup = $('#finish-order-modal');
+						popup.find('.modal-title').html('Order sent 🎉️️');
+						popup.find('.modal-body').html('<p class="text-center"><strong>Your order has been successfully sent!️️</strong></p><div class="text-center"><small><i>You will be redirected</i></small></div>');
+						popup.modal('show');
+						setTimeout(function () {
+							Utils.dataBinder.removeData('cart');
+							window.location.href = "/"
+						}, 3000);
+					})
+					.addListener('empty-cart', apicart.cart.events.UPDATED, function () {
+						if ( ! emptyCartRedirectEnabled) {
+							return;
+						}
+
+						window.redirectIfCartIsEmpty();
+					});
+			}
+		});
+
+		var emptyCartRedirectEnabled = true;
+		$('.apicart-cart-finish').on('click', function () {
+			emptyCartRedirectEnabled = false;
+		});
+
+	</script>
+</body>
+</html>

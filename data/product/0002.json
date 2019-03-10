@@ -1,0 +1,13 @@
+{
+	"id": 2,
+	"name": "Product 2",
+	"description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam dictum tincidunt diam. Etiam quis quam.Duis pulvinar. Fusce nibh. Aenean id metus id velit ullamcorper pulvinar. Mauris dictum facilisis augue",
+	"availability": "Available",
+	"price": 2,
+	"taxRate": 21,
+	"images": {
+		"primary": {
+			"url": "https://sandbox.apicart.net/assets/images/apicart-image.png"
+		}
+	}
+}
