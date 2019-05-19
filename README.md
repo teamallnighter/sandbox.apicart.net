@@ -1,5 +1,5 @@
 <h1 align="center">
-    Sandbox.apicart.net (beta)
+    Sandbox.apicart.net
 </h1>
 
 - This is a repository for the [https://sandbox.apicart.net](https://sandbox.apicart.net).
