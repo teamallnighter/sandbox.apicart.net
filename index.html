@@ -3,12 +3,12 @@
 <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127787354-2"></script>
-	<script>
+<!-- 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 		gtag('config', 'UA-127787354-2');
-	</script>
+	</script> -->
 
 	<meta charset="UTF-8">
 	<link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon.png">
@@ -42,456 +42,184 @@
 <body>
 	<link rel="stylesheet" href="/assets/css/bootstrap.css">
 	<link rel="stylesheet" href="/assets/css/sandbox.css">
-	
+	<div class="top-background-split"></div>
+
 	<header class="top-header">
-		<nav class="navbar navbar-default navbar-fixed-top">
+		<nav class="navbar navbar-default-top py-4 px-0">
 			<div class="container-fluid">
 				<div class="navbar-header w-100 d-inline-flex align-items-center justify-content-between">
 					<h1>
 						<img class="logo align-middle" src="/assets/images/apicart-image.png" alt="">
-						<a href="/" class="logo-text align-middle">
+						<a href="/" class="logo-text align-middle font-weight-bold">
 							Sandbox
 						</a>
 					</h1>
-					<div class="cart-dropdown"></div>
+					<div class="cart-dropdown">
+						<a href="#recapitulation" class="cart-dropdown__button shadow">
+							<i class="fas fa-shopping-basket fa-lg"></i>
+							<span class="cart-dropdown__button-quantity font-weight-bold">0</span>
+						</a>
+					</div>
 				</div>
 			</div>
 		</nav>
 	</header>
 
-	<main>
-		<div class="mt-3">
-			<div class="alert alert-success alert-dismissible fade show" role="alert">
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				<div>
-					<strong>HERE WE GO!</strong><br>
-					<ol>
-						<li>
-							Add some items into the cart, check the recapitulation, fill the delivery info and send your order!<br>
-							No matter what you do, you will not lose the data you already filled in forms because they are persistent thanks to our data binder!<br>
-						</li>
-						<li>
-							Open the cart dropdown and use the quantity manipulators. The change of the cart content will be dispatched into all other components!<br>
-						</li>
-						<li>
-							Have you tried to clear the cart in one of the shopping steps? Try it! There is a nice flash message waiting for you!<br>
-						</li>
-						<li>
-							Want to try more?
-							<a href="https://docs.apicart.net" target="_blank" rel="noopener">
-								<strong>Sign up on our testing environment for FREE</strong>
-							</a>
-							or
-							<a href="https://apicart.net" target="_blank" rel="noopener">
-								<strong>visit our website</strong>
-							</a>!
-						</li>
-					</ol>
+	<main class="px-2 px-lg-0 mt-2 mt-md-4 mt-xl-5 pt-xl-5">
+		<section class="mb-5 pb-lg-3">
+			<h1 class="products-title mb-5 text-white text-center font-weight-bold text-uppercase">Infinite photography</h1>
+			<div class="d-flex flex-row flex-wrap justify-content-around">
+				<div class="product product-1 mb-2 mb-xl-0 card border-0 shadow">
+					<div class="card-img-top"></div>
+					<div class="card-body">
+						<h3 class="h4 font-weight-bold card-title">Easy to use</h3>
+						<p class="card-text">
+							Sign up, copy&paste the components code and you are ready to go.
+							Start selling books, courses, games, photos and a lot more right now.
+							<br>
+							<strong>Save your time and money.</strong>
+						</p>
+						<div class="text-center">
+							<a role="button" data-item-url="https://sandbox.apicart.net/data/product/0001.json" class="add-item-to-cart btn btn-primary font-weight-bold">Add to cart</a>
+						</div>
+					</div>
 				</div>
-				<div>
-					<strong>SEE WHAT IS BEHIND THE SCENE!</strong>
-					<br>
-					<div class="mb-3">
-						This website a is static website hosted via <a href="https://pages.github.com" target="_blank" rel="noopener">Github Pages</a>.
-						See the <a href="https://github.com/apicart/sandbox.apicart.net" target="_blank" rel="noopener">repository</a>!
-						<br>
-						Also <a href="#behind-the-scene"><strong>all used pieces of code are shown bellow👇</strong></a>.
-						<br>
-						<em>There is no extra validation on the forms as this page serves only as an example.</em>
+				<div class="product product-2 mb-2 mb-xl-0 card border-0 shadow">
+					<div class="card-img-top"></div>
+					<div class="card-body">
+						<h3 class="h4 font-weight-bold card-title">Multiplatform</h3>
+						<p class="card-text">
+							One entrypoint, multiple paplications.
+							You can use apicart on any platform you want. Websites, mobile or desktop application or even in games.
+							It is possible to use API directly or over our SDKs.
+							<br>
+							<strong>Code less, do more.</strong>
+						</p>
+						<div class="text-center">
+							<a role="button" data-item-url="https://sandbox.apicart.net/data/product/0002.json" class="add-item-to-cart btn btn-primary font-weight-bold">Add to cart</a>
+						</div>
 					</div>
-					<div class="text-center">
-						<a href="https://twitter.com/apicart_en?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-text="I have just tried Apicart Sandbox https://sandbox.apicart.net! E-commerce via API in 3 steps! @apicart_en #apicart #ecommerce #webdevelopment " data-show-count="false">Follow @apicart_en</a>
-						<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I have just tried Apicart Sandbox! E-commerce platform via API in a 3 steps! @apicart_en #apicart #ecommerce #webdevelopment " data-show-count="true">Tweet</a>
-						<a class="github-button" href="https://github.com/apicart/sandbox.apicart.net" data-size="large" aria-label="Star apicart/sandbox.apicart.net on GitHub">Star</a>
+				</div>
+				<div class="product product-3 mb-2 mb-xl-0 card border-0 shadow">
+					<div class="card-img-top"></div>
+					<div class="card-body">
+						<h3 class="h4 font-weight-bold card-title">Scaleable and flexible</h3>
+						<p class="card-text">
+							Perfect for small ecommerce with a few products, prepared for large ecommerce applications
+							with thousands of products and orders.
+							<br>
+							<strong>Start small, grow big.</strong>
+						</p>
+						<div class="text-center">
+							<a role="button" data-item-url="https://sandbox.apicart.net/data/product/0003.json" class="btn btn-primary font-weight-bold">Add to cart</a>
+						</div>
 					</div>
+				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="white-block">
-			<h2 class="mb-3">
-				The best products!
+		<section id="recapitulation" class="mb-5 pb-lg-3">
+			<h2 class="font-weight-bold text-center">Recapitulation</h2>
+			<ul class="list-group">
+				<li class="list-group-item d-flex justify-content-between align-items-center">
+					Cras justo odio
+					<span class="badge badge-primary badge-pill">14</span>
+				</li>
+			</ul>
+		</section>
+
+		<section class="mb-5 pb-lg-3">
+			<h2 class="font-weight-bold text-center mb-3">
+				Payment and delivery
 			</h2>
-			<div class="d-flex justify-content-between flex-wrap">
-				<div class="d-flex flex-column justify-content-around product">
-					<h3 class="product-name">Product 1</h3>
-					<p class="text-center">
-						<img src="/assets/images/apicart-image.png" alt="" class="product-image">
-					</p>
+			<form class="mb-3">
+				<div class="d-flex flex-column flex-sm-row">
+					<div class="mb-2 mb-sm-0 mr-sm-4 w-100">
+						<label class="mr-sm-2" for="shipping-methods">Delivery</label>
+						<select id="shipping-methods" class="custom-select add-parameter-to-cart" data-parameter-key="shippingMethod.id">
+							<option disabled selected>---</option>
+						</select>
+					</div>
 
-					<p class="product-description">
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam dictum tincidunt diam. Etiam quis quam.
-						Duis pulvinar. Fusce nibh. Aenean id metus id velit ullamcorper pulvinar. Mauris dictum facilisis augue
-					</p>
-
-					<p class="w-100 d-inline-flex justify-content-between">
-						<span class="product-price">$1</span>
-						<span class="product-availability">In stock</span>
-					</p>
-					<div class="text-center quantity-manipulator" data-item-url="https://sandbox.apicart.net/data/product/0001.json"></div>
+					<div class="w-100">
+						<label class="mr-sm-2" for="payment-methods">Billing</label>
+						<select id="payment-methods" class="custom-select add-parameter-to-cart" data-parameter-key="paymentMethod.id">
+							<option disabled selected>---</option>
+						</select>
+					</div>
 				</div>
+			</form>
+		</section>
+		<section class="mb-5">
+			<h2 class="text-center font-weight-bold mb-3">Contact information</h2>
+			<form>
+				<p>
+					<label for="shipping-address-email">E-mail</label>
+					<input id="shipping-address-email" type="email" class="form-control add-parameter-to-cart"  data-parameter-key="shippingAddress.email">
+				</p>
 
-				<div class="d-flex flex-column justify-content-around product">
-					<h3 class="product-name">Product 2</h3>
-					<p class="text-center">
-						<img src="/assets/images/apicart-image.png" alt="" class="product-image">
-					</p>
+				<p class="d-flex flex-column flex-sm-row">
+					<span class="mb-2 mb-sm-0 mr-sm-4 w-100">
+						<label for="shipping-address-first-name">Name</label>
+						<input id="shipping-address-first-name" type="text" class="form-control add-parameter-to-cart" data-parameter-key=""="shippingAddress.firstName">
+					</span>
+					<span class="w-100">
+						<label for="shipping-address-last-name">Surname</label>
+						<input id="shipping-address-last-name" type="text" class="form-control add-parameter-to-cart" data-parameter-key="shippingAddress.lastName">
+					</span>
+				</p>
 
-					<p class="product-description">
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam dictum tincidunt diam. Etiam quis quam.
-						Duis pulvinar. Fusce nibh. Aenean id metus id velit ullamcorper pulvinar. Mauris dictum facilisis augue
-					</p>
+				<p>
+					<label for="shipping-address-street-and-number">Street and number</label>
+					<input id="shipping-address-street-and-number" type="text" class="form-control add-parameter-to-cart" data-parameter-key="shippingAddress.streetAndNumber">
+				</p>
 
-					<p class="w-100 d-inline-flex justify-content-between">
-						<span class="product-price">$2</span>
-						<span class="product-availability">In stock</span>
-					</p>
-					<div class="text-center quantity-manipulator" data-item-url="https://sandbox.apicart.net/data/product/0002.json"></div>
-				</div>
-
-				<div class="d-flex flex-column justify-content-around product">
-					<h3 class="product-name">Product 3</h3>
-					<p class="text-center">
-						<img src="/assets/images/apicart-image.png" alt="" class="product-image">
-					</p>
-
-					<p class="product-description">
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam dictum tincidunt diam. Etiam quis quam.
-						Duis pulvinar. Fusce nibh. Aenean id metus id velit ullamcorper pulvinar. Mauris dictum facilisis augue
-					</p>
-
-					<p class="w-100 d-inline-flex justify-content-between">
-						<span class="product-price">$3</span>
-						<span class="product-availability">In stock</span>
-					</p>
-					<div class="text-center quantity-manipulator" data-item-url="https://sandbox.apicart.net/data/product/0003.json"></div>
-				</div>
-
-				<div class="d-flex flex-column justify-content-around product">
-					<h3 class="product-name">Product 4</h3>
-					<p class="text-center">
-						<img src="/assets/images/apicart-image.png" alt="" class="product-image">
-					</p>
-
-					<p class="product-description">
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam dictum tincidunt diam. Etiam quis quam.
-						Duis pulvinar. Fusce nibh. Aenean id metus id velit ullamcorper pulvinar. Mauris dictum facilisis augue
-					</p>
-
-					<p class="w-100 d-inline-flex justify-content-between">
-						<span class="product-price">$4</span>
-						<span class="product-availability">In stock</span>
-					</p>
-					<div class="text-center quantity-manipulator" data-item-url="https://sandbox.apicart.net/data/product/0004.json"></div>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="white-block">
-			<h2 id="behind-the-scene" class="mb-3">Behind the scene</h2>
-
-			<div><strong>Global configuration</strong></div>
-			<pre class="mb-3"><code class="language-html">
-				&lt;script&gt;
-					window.apicartConfig = window.apicartConfig || [];
-					function apicartConfigure(config){apicartConfig.push(config)}
-					apicartConfigure({
-						token: "1234567890",
-						currencySymbol: '$',
-						currencySymbolPositionLeft: true,
-						currencySymbolWithSpace: false
-					});
-				&lt;/script&gt;
-			</code></pre>
-
-			<div><strong>Cart Dropdown</strong></div>
-			<pre class="mb-3"><code class="language-html">
-				&lt;script&gt;
-					...
-					apicartConfigure({
-						...
-						init: function () {
-							apicart.cartDropdown.render({
-								el: '.cart-dropdown',
-								showQuantityManipulator: true,
-								removalButton: '&lt;i class=&quot;fa fa-times-circle&quot; data-apicart-cart-remove-item=&quot;%dataUrl%&quot; role=&quot;button&quot;&gt;&lt;/i&gt;',
-								toggleButton: '&lt;i class=&quot;fa fa-shopping-cart fa-lg cursor-pointer&quot;&gt;&lt;/i&gt; &lt;strong class=&quot;cart-dropdown-items-count&quot;&gt;%itemsCount%&lt;/strong&gt;',
-								infoBlock: '&lt;strong&gt;%name%&lt;/strong&gt;',
-								footerBlocks: [
-									function (itemsCount, itemsPrice) {
-										return '&lt;div class=&quot;text-left&quot;&gt;Number of items: ' + itemsCount + '&lt;br&gt;Total price: '
-													+ Brackets.getFilter('currency').call(null, itemsPrice);
-												+ '&lt;/div&gt;';
-									},
-									'&lt;div class=&quot;text-right&quot;&gt;&lt;a href=&quot;/cart-overview.html&quot; class=&quot;btn btn-danger&quot;&gt;Finish Order&lt;i class=&quot;fa fa-chevron-circle-right ml-1&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;'
-								]
-							});
-						}
-					});
-				&lt;/script&gt;
-			</code></pre>
-
-			<div><strong>Add item to basket forms</strong></div>
-			<pre class="mb-3"><code class="language-html">
-				&lt;script&gt;
-					...
-					apicartConfigure({
-						...
-						init: function () {
-							...
-							var quantityManipulators = document.querySelectorAll('.quantity-manipulator');
-							Utils.loops.forEach(quantityManipulators, function (key, quantityManipulator) {
-								apicart.cartQuantityManipulator.render({
-									el: quantityManipulator,
-									itemUrl: quantityManipulator.getAttribute('data-item-url'),
-									submitButton: 'Add to Cart'
-								})
-							});
-						}
-					});
-				&lt;/script&gt;
-			</code></pre>
-
-			<div><strong>Popup - item added to basket</strong></div>
-			<pre class="mb-4"><code class="language-html">
-				&lt;script&gt;
-					...
-					apicartConfigure({
-						...
-						init: function () {
-							...
-							Utils.eventDispatcher.addListener('item-added-popup', apicart.cart.events.ITEM_ADDED, function (item) {
-								var popup = $('#add-to-cart-modal');
-								popup.find('.modal-title').html('Cart updated 🎉️');
-								popup.find('.modal-body').html('<strong>' + item.name + '</strong> was successfully added into the cart!');
-								popup.modal('show');
-							});
-						}
-					});
-				&lt;/script&gt;
-			</code></pre>
-
-			<div><strong>Order recapitulation</strong></div>
-			<pre class="mb-4"><code class="language-html">
-				&lt;script&gt;
-					...
-					apicartConfigure({
-						...
-						init: function () {
-							...
-							apicart.cartOverview.render({
-								el: '.cart-overview',
-								showQuantityManipulator: true,
-								infoBlocks: [
-									'&lt;strong&gt;%name%&lt;/strong&gt;'
-								],
-								footerBlocks: [
-									function (itemsCount, itemsPrice) {
-										return '&lt;p class=&quot;text-right&quot;&gt;Total price: ' + Brackets.getFilter('currency').call(null, itemsPrice) + '&lt;/p&gt;';
-									},
-									'&lt;div class=&quot;text-right&quot;&gt;&lt;a href=&quot;/payment-and-delivery.html&quot; class=&quot;btn btn-danger&quot;&gt;Payment and delivery &lt;i class=&quot;fa fa-chevron-circle-right ml-1&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/div&gt;'
-								]
-							});
-						}
-					});
-				&lt;/script&gt;
-			</code></pre>
-
-			<div><strong>Payment and delivery fields</strong></div>
-			<pre class="mb-4"><code class="language-html">
-				&lt;select id=&quot;shipping-methods&quot; class=&quot;custom-select&quot; data-bind=&quot;cart.shippingMethod&quot; data-apicart-cart-add-parameter=&quot;shippingMethod.id&quot;&gt;
-					&lt;option disabled selected&gt;---&lt;/option&gt;
-					{{foreach shippingMethods as shippingMethod}}
-						{{returnIf ! shippingMethod.all.enabled}}
-
-						&lt;option value=&quot;{{$shippingMethod.all.id}}&quot;&gt;{{$shippingMethod.all.name}}&lt;/option&gt;
-					{{/foreach}}
-				&lt;/select&gt;
-				&lt;select id=&quot;payment-methods&quot; class=&quot;custom-select&quot; data-bind=&quot;cart.paymentMethod&quot; data-apicart-cart-add-parameter=&quot;paymentMethod.id&quot;&gt;
-					&lt;option disabled selected&gt;---&lt;/option&gt;
-					{{foreach paymentMethods as paymentMethod}}
-						{{returnIf ! paymentMethod.all.enabled}}
-
-						&lt;option value=&quot;{{$paymentMethod.all.id}}&quot;&gt;{{$paymentMethod.all.name}}&lt;/option&gt;
-					{{/foreach}}
-				&lt;/select&gt;
-				&lt;script&gt;
-					...
-					apicartConfigure({
-						...
-						init: function () {
-							...
-							apicart.paymentMethods.manager.getPaymentMethods(null, function (responseIsOk, response) {
-								Brackets.render({
-									el: '#payment-methods',
-									data: {
-										paymentMethods: responseIsOk ? response.data.findPaymentMethods.paymentMethods : null
-									}
-								});
-
-								Utils.dataBinder.bindData(true);
-							});
-
-							apicart.shippingMethods.manager.getShippingMethods(null, function (responseIsOk, response) {
-								Brackets.render({
-									el: '#shipping-methods',
-									data: {
-										shippingMethods: responseIsOk ? response.data.findShippingMethods.shippingMethods : null
-									}
-								});
-
-								Utils.dataBinder.bindData(true);
-							});
-						}
-					});
-				&lt;/script&gt;
-			</code></pre>
-
-			<div><strong>Contact information fields</strong></div>
-			<pre class="mb-4"><code class="language-html">
-				&lt;input type=&quot;email&quot; class=&quot;form-control&quot; data-bind=&quot;cart.customer.email&quot; data-apicart-cart-add-parameter=&quot;shippingAddress.email&quot;&gt;
-				&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-bind=&quot;cart.customer.firstName&quot; data-apicart-cart-add-parameter=&quot;shippingAddress.firstName&quot;&gt;
-				&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-bind=&quot;cart.customer.lastName&quot; data-apicart-cart-add-parameter=&quot;shippingAddress.lastName&quot;&gt;
-				&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-bind=&quot;cart.payment.streetAndNumber&quot; data-apicart-cart-add-parameter=&quot;shippingAddress.streetAndNumber&quot;&gt;
-				&lt;input type=&quot;text&quot; class=&quot;form-control&quot; data-bind=&quot;cart.payment.town&quot; data-apicart-cart-add-parameter=&quot;shippingAddress.city&quot;&gt;
-				&lt;input type=&quot;number&quot; class=&quot;form-control&quot; data-bind=&quot;cart.payment.zip&quot; data-apicart-cart-add-parameter=&quot;shippingAddress.zip&quot;&gt;
-			</code></pre>
-
-			<div><strong>Sent order button</strong></div>
-			<pre class="mb-4"><code class="language-html">
-				&lt;script&gt;
-					...
-					apicartConfigure({
-						...
-						init: function () {
-							...
-							Utils.eventDispatcher.addListener('cart-finished', apicart.cart.events.FINISHED, function (ok) {
-								var popup = $('.modal');
-								popup.find('.modal-title').html('Order sent 🎉️️');
-								popup.find('.modal-body').html('&lt;p class=&quot;text-center&quot;&gt;&lt;strong&gt;Your order has been successfully sent!️️&lt;/strong&gt;&lt;/p&gt;&lt;div class=&quot;text-center&quot;&gt;&lt;small&gt;&lt;i&gt;You will be redirected&lt;/i&gt;&lt;/small&gt;&lt;/div&gt;');
-								popup.modal('show');
-								setTimeout(function () {
-									Utils.dataBinder.removeData('cart');
-									window.location.href = &quot;/&quot;
-								}, 3000);
-							});
-						}
-					});
-				&lt;/script&gt;
-			</code></pre>
-			<pre class="mb-4"><code class="language-html">
-				&lt;button class=&quot;btn btn-danger apicart-cart-finish&quot;&gt;Finish Order &lt;i class=&quot;fa fa-chevron-circle-right ml-1&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-			</code></pre>
-
-			<div><strong>Empty cart flash messages</strong></div>
-			<pre class="mb-4"><code class="language-html">
-				&lt;script&gt;
-					...
-					apicartConfigure({
-						...
-						init: function () {
-							...
-							redirectIfCartIsEmpty();
-
-							Utils.eventDispatcher.addListener('empty-cart', apicart.cart.events.UPDATED, function () {
-								redirectIfCartIsEmpty();
-							});
-
-							function redirectIfCartIsEmpty() {
-								if ( ! apicart.cart.manager.hasItems()) {
-									Utils.flashMessages.addMessage('Your cart is empty 😱!');
-									window.location.href = '/';
-								}
-							}
-						}
-					});
-				&lt;/script&gt;
-			</code></pre>
-			<pre class="mb-4"><code class="language-html">
-				&lt;script&gt;
-					...
-					apicartConfigure({
-						...
-						init: function () {
-							...
-							if (Utils.flashMessages.hasMessages()) {
-								var messages = '';
-
-								Utils.flashMessages.processMessages(function (content) {
-									if (messages) {
-										messages += '&lt;br&gt;';
-									}
-
-									messages += '&lt;div class="text-center"&gt;&lt;strong&gt;' + content + '&lt;/strong&gt;&lt;/div&gt;';
-								});
-
-								var popup = $('#flash-messages-modal');
-								popup.find('.modal-body').html(messages);
-								popup.modal('show');
-							}
-						}
-					});
-				&lt;/script&gt;
-			</code></pre>
-		</div>
+				<p class="d-flex flex-column flex-sm-row">
+					<span class="mb-2 mb-sm-0 mr-sm-4 w-100">
+						<label>Town</label>
+						<input type="text" class="form-control add-parameter-to-cart" data-parameter-key="shippingAddress.city">
+					</span>
+					<span class="w-100">
+						<label>Zip</label>
+						<input type="number" class="form-control add-parameter-to-cart" data-parameter-key="shippingAddress.zip">
+					</span>
+				</p>
+				<p class="text-center mt-2 mt-md-4">
+					<button class="font-weight-bold btn btn-primary btn-lg">Finish order</button>
+				</p>
+			</form>
+		</section>
 	</main>
 
-	<div class="modal fade" id="add-to-cart-modal">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title"></h4>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body"></div>
-				<div class="modal-footer d-flex justify-content-center justify-content-md-between flex-wrap">
-					<button type="button" class="col-10 col-md-5 m-0 mb-2 mb-md-0 btn btn-outline-secondary" data-dismiss="modal"><i class="fa fa-chevron-circle-left"></i> Continue shopping</button>
-					<a href="/cart-overview.html" class="col-10 col-md-5 m-0 btn btn-danger">Finish Order <i class="fa fa-chevron-circle-right"></i></a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="flash-messages-modal">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-body"></div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<footer class="text-center my-2 my-lg-5">
-		<span>
+		<span class="font-weight-bold">
 			&copy; 2018-2019
 			<a href="https://apicart.net" target="_blank" rel="noopener">
 				Apicart s.r.o.
 			</a>
 		</span>
 		|
-		<span>
+		<span class="font-weight-bold">
 			<a href="https://docs.apicart.net" target="blank" rel="noopener">
 				Documentation
 			</a>
 		</span>
 		|
-		<span>
+		<span class="font-weight-bold">
 			<a href="https://github.com/apicart/sandbox.apicart.net" target="blank" rel="noopener">
 				Sandbox Code
 			</a>
 		</span>
 	</footer>
 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" media="none" onload="this.media='all'">
-	<link rel="stylesheet" href="/assets/css/prism.css">
+	<link onload="this.rel='stylesheet'" rel="alternate stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,800&display=swap&subset=latin-ext">
+	<link onload="this.rel='stylesheet'" rel="alternate stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link onload="this.rel='stylesheet'" rel="alternate stylesheet" href="/assets/css/prism.css">
 
-	<script src="https://cdn.apicart.net/v1/?components=all" async></script>
-	<script src="/assets/js/jquery.js"></script>
-	<script src="/assets/js/bootstrap.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	<script src="http://localhost:19085/packages/core-sdk/dist/core.js"></script>
+	<script src="http://localhost:19085/packages/payments-sdk/dist/payments.js"></script>
+	<script src="http://localhost:19085//packages/store-sdk/dist/store.js"></script>
 	<script src="/assets/js/prism.js" async></script>
 	<script src="/assets/js/sandbox.js"></script>
 

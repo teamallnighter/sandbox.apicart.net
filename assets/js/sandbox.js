@@ -1,79 +1,109 @@
-window.apicartConfig = window.apicartConfig || [];
-function apicartConfigure(config){apicartConfig.push(config)}
-apicartConfigure({
-	token: "9mCu3DlBCa4REI?Q7kKly!Rw6!_FvD8K_dgPXe1b20?r6!sPTQMyCpq_ADt!jXOD",
-	currencySymbol: '$',
-	currencySymbolPositionLeft: true,
-	currencySymbolWithSpace: false,
-	cart: {
-		apiUrl: 'https://store-api.apicart.dev'
-	},
-	customer: {
-		apiUrl: 'https://store-api.apicart.dev'
-	},
-	order: {
-		apiUrl: 'https://store-api.apicart.dev'
-	},
-	paymentMethods: {
-		apiUrl: 'https://store-api.apicart.dev'
-	},
-	shippingMethods: {
-		apiUrl: 'https://store-api.apicart.dev'
-	},
-	init: function () {
-		var quantityManipulators = document.querySelectorAll('.quantity-manipulator');
-		Utils.loops.forEach(quantityManipulators, function (key, quantityManipulator) {
-			apicart.cartQuantityManipulator.render({
-				el: quantityManipulator,
-				itemUrl: quantityManipulator.getAttribute('data-item-url'),
-				submitButton: 'Add to Cart'
-			})
-		});
+/****************************** Initialization ******************************/
+Apicart.setDevEnv();
 
-		apicart.cartDropdown.render({
-			el: '.cart-dropdown',
-			showQuantityManipulator: true,
-			removalButton: '<i class="fa fa-times-circle" data-apicart-cart-remove-item="%dataUrl%" role="button"></i>',
-			toggleButton: '<i class="fa fa-shopping-cart fa-lg cursor-pointer"></i> <strong class="cart-dropdown-items-count">%itemsCount%</strong>',
-			infoBlock: '<strong>%name%</strong>',
-			footerBlocks: [
-				function (itemsCount, itemsPrice) {
-					return '<div class="text-left">Number of items: ' + itemsCount + '<br>Total price: '
-								+ Brackets.getFilter('currency').call(null, itemsPrice);
-							+ '</div>';
-				},
-				'<div class="text-right"><a href="/cart-overview.html" class="btn btn-danger">Finish Order<i class="fa fa-chevron-circle-right ml-1"></i></a></div>'
-			]
-		});
+const utils = Apicart.Utils;
+const eventDispatcher = utils.EventDispatcher
 
-		Utils.eventDispatcher.addListener('item-added-popup', [apicart.cart.events.ITEM_ADDED, apicart.cart.events.ITEM_UPDATED], function (item) {
-			var popup = $('#add-to-cart-modal');
-			popup.find('.modal-title').html('Cart updated 🎉️');
-			popup.find('.modal-body').html('<strong>' + item.name + '</strong> was successfully added into the cart!');
-			popup.modal('show');
-		});
-
-		if (Utils.flashMessages.hasMessages()) {
-			var messages = '';
-
-			Utils.flashMessages.processMessages(function (content) {
-				if (messages) {
-					messages += '<br>';
-				}
-
-				messages += '<div class="text-center"><strong>' + content + '</strong></div>';
-			});
-
-			var popup = $('#flash-messages-modal');
-			popup.find('.modal-body').html(messages);
-			popup.modal('show');
-		}
-	}
+const store = new Apicart.Store({
+	token: '9mCu3DlBCa4REI?Q7kKly!Rw6!_FvD8K_dgPXe1b20?r6!sPTQMyCpq_ADt!jXOD',
 });
 
-window.redirectIfCartIsEmpty = function () {
-	if ( ! apicart.cart.manager.getItemsCount()) {
-		Utils.flashMessages.addMessage('Your cart is empty 😱!');
-		window.location.href = '/';
+
+
+/****************************** Add item to cart button ******************************/
+utils.Dom.on('click', '.add-item-to-cart', async (event) => {
+	const cart = await store.getCart();
+	cart.addItem(event.target.getAttribute('data-item-url'));
+});
+
+
+
+/****************************** Cart dropdown button ******************************/
+const cartDropdownButtonQuantity = document.querySelector('.cart-dropdown__button-quantity');
+const initCartDropdownButtonQuantity = async () => {
+	if (store.hasCart()) {
+		cartDropdownButtonQuantity.innerHTML = await (await store.getCart()).getTotalPrice();
 	}
-};
+}
+
+initCartDropdownButtonQuantity();
+
+eventDispatcher.addListener(
+	'cartDropdownButtonQuantity',
+	store.eventDispatcherEvents.cart.UPDATED,
+	(cartEntity) => {
+		cartDropdownButtonQuantity.innerHTML = cartEntity.getTotalPrice();
+	}
+);
+
+
+
+/****************************** Cart updated modal ******************************/
+eventDispatcher.addListener(
+	'cartUpdatedModal',
+	[store.eventDispatcherEvents.cart.ITEM_ADDED, store.eventDispatcherEvents.cart.ITEM_UPDATED],
+	(cartItemEntity) => {
+		Swal.fire({
+			title: 'Cart updated!',
+			html: 'Item <strong>' + cartItemEntity.getItem().getName() + '</strong> was successfully added into the cart',
+			icon: 'success',
+			confirmButtonText: 'Continue shopping'
+		});
+	}
+);
+
+
+/****************************** Order recapitulation ******************************/
+
+
+/****************************** Payment methods list ******************************/
+const initPaymentMethodsList = async () => {
+	const selectElement = document.querySelector('#payment-methods');
+	const paymentMethods = await store.getPaymentMethods();
+	console.log(paymentMethods);
+	utils.Loops.forEach(paymentMethods, (paymentMethod) => {
+		const optionElement = document.createElement('option');
+		optionElement.setAttribute('value', paymentMethod.getId());
+		optionElement.innerHTML = paymentMethod.getName();
+		selectElement.appendChild(optionElement);
+	});
+}
+
+initPaymentMethodsList();
+
+/****************************** Shipping methods list ******************************/
+const initShippingMethodsList = async () => {
+	const selectElement = document.querySelector('#shipping-methods');
+	const shippingMethods = await store.getShippingMethods();
+	console.log(shippingMethods);
+	utils.Loops.forEach(shippingMethods, (paymentMethod) => {
+		const optionElement = document.createElement('option');
+		optionElement.setAttribute('value', paymentMethod.getId());
+		optionElement.innerHTML = paymentMethod.getName();
+		selectElement.appendChild(optionElement);
+	});
+}
+initShippingMethodsList();
+
+
+/****************************** Form parameters ******************************/
+utils.Dom.on('change', '.add-parameter-to-cart', async (event) => {
+	const cart = await store.getCart()
+	const parameterKeyPath = event.target.getAttribute('data-parameter-key');
+	cart.addParameter(parameterKeyPath, event.target.value);
+});
+
+
+/****************************** Finish order ******************************/
+utils.Dom.on('click', '.finish-cart', () => {
+	const cart = await store.getCart();
+	cart.finish();
+});
+
+eventDispatcher.addListener('finishCartModal', store.eventDispatcherEvents.cart.FINISH, () => {
+	Swal.fire({
+		title: 'Order sent!',
+		html: 'Your order have been successfully finished.<br>Page will be refreshed.',
+		icon: 'success'
+	});
+});
