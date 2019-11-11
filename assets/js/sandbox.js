@@ -41,7 +41,7 @@ eventDispatcher.addListener(
 	(cartItemEntity) => {
 		Swal.fire({
 			title: 'Cart updated!',
-			html: 'Item <strong>' + cartItemEntity.getItem().getName() + '</strong> was successfully added into the cart',
+			html: 'Item <strong>' + cartItemEntity.getItem().getName() + '</strong> was successfully added into the cart.',
 			icon: 'success',
 			confirmButtonText: 'Continue shopping'
 		});
