@@ -36,269 +36,94 @@
 	<meta name="twitter:title" content="Apicart Sandbox">
 	<meta name="twitter:description" content="Examples of all apicart components on one page!">
 	<meta name="twitter:image" content="https://sandbox.apicart.net/assets/images/apicart-image.png">
-	<meta name="twitter:site" content="@apicartapp">
-	<meta name="twitter:creator" content="@apicartapp">
+	<meta name="twitter:site" content="@apicart_en">
+	<meta name="twitter:creator" content="@apicart_en">
 </head>
 <body>
-	<link rel="stylesheet" href="/assets/css/bootstrap.css">
-	<link rel="stylesheet" href="/assets/css/sandbox.css">
-	<div class="text-center">
-		<div class="container m-2 alert alert-warning alert-dismissible fade show d-inline-block" role="alert">
-			<strong class="font-weight-bold h3">Before you start!</strong>
-			<div>
-				This is just an example of e-commerce page using Apicart Javascript SDK.
-				Do not fill any real information into the forms, because in order to show Apicart functionality, they can be viewed by anyone in the testing administration.
-			</div>
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-	</div>
-	<div class="top-background-split"></div>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/sandbox.css">
 
-	<header class="top-header">
+	<header class="top-header border-bottom">
 		<nav class="navbar navbar-default-top py-4 px-0">
 			<div class="container-fluid">
 				<div class="navbar-header w-100 d-inline-flex align-items-center justify-content-between">
 					<h1>
-						<img class="logo align-middle" src="/assets/images/apicart-image.png" alt="">
-						<a href="/" class="logo-text align-middle font-weight-bold">
-							Sandbox
+						<img class="logo align-middle" lazy="true" src="/assets/images/apicart-image.png" alt="">
+						<a href="/" class="logo-text align-middle">
+							<strong>Apicart Sandbox</strong>
 						</a>
 					</h1>
-					<div class="cart-dropdown__wrapper"></div>
-					<script type="text/html" id="cart-dropdown-template">
-						<div class="cart-dropdown">
-							<a href="#recapitulation" class="cart-dropdown__button shadow">
-								<i class="fas fa-shopping-basket fa-lg"></i>
-								<span class="cart-dropdown__button-quantity font-weight-bold">$%price%</span>
-							</a>
-						</div>
-					</script>
+					<div id="apicart-cart-dropdown" class="cart-dropdown__wrapper"></div>
 				</div>
 			</div>
 		</nav>
 	</header>
 
-	<main class="px-2 px-lg-0 mt-2 mt-md-4 mt-xl-5 pt-xl-5">
-		<section class="mb-5 pb-lg-5">
-			<h1 class="products-title mb-5 text-white text-center font-weight-bold text-uppercase">Infinite photography</h1>
-			<div class="d-flex flex-row flex-wrap justify-content-around">
-				<div class="product product-1 mb-2 mb-xl-0 card border-0 shadow">
-					<div class="card-img-top"></div>
-					<div class="card-body d-flex flex-column justify-content-between">
-						<div>
-							<h3 class="h4 font-weight-bold card-title">Easy to use</h3>
-							<p class="card-text">
-								Sign up, copy&paste the components code and you are ready to go.
-								Start selling books, courses, games, photos and a lot more right now.
-								<br>
-								<strong>Save your time and money.</strong>
-							</p>
-						</div>
-						<div class="text-center mt-3">
-							<a role="button" data-item-url="https://sandbox.apicart.net/data/product/0001.json" class="add-item-to-cart btn btn-primary font-weight-bold">Add to cart</a>
-						</div>
-					</div>
-				</div>
-				<div class="product product-2 mb-2 mb-xl-0 card border-0 shadow">
-					<div class="card-img-top"></div>
-					<div class="card-body d-flex flex-column justify-content-between">
-						<div>
-							<h3 class="h4 font-weight-bold card-title">Multiplatform</h3>
-							<p class="card-text">
-								One entrypoint, multiple paplications.
-								You can use apicart on any platform you want. Websites, mobile or desktop application or even in games.
-								It is possible to use API directly or over our SDKs.
-								<br>
-								<strong>Code less, do more.</strong>
-							</p>
-						</div>
-						<div class="text-center mt-3">
-							<a role="button" data-item-url="https://sandbox.apicart.net/data/product/0002.json" class="add-item-to-cart btn btn-primary font-weight-bold">Add to cart</a>
-						</div>
-					</div>
-				</div>
-				<div class="product product-3 mb-2 mb-xl-0 card border-0 shadow">
-					<div class="card-img-top"></div>
-					<div class="card-body d-flex flex-column justify-content-between">
-						<div>
-							<h3 class="h4 font-weight-bold card-title">Scaleable and flexible</h3>
-							<p class="card-text">
-								Perfect for small ecommerce with a few products, prepared for large ecommerce applications
-								with thousands of products and orders.
-								<br>
-								<strong>Start small, grow big.</strong>
-							</p>
-						</div>
-						<div class="text-center mt-3">
-							<a role="button" data-item-url="https://sandbox.apicart.net/data/product/0003.json" class="add-item-to-cart btn btn-primary font-weight-bold">Add to cart</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section id="recapitulation" class="mb-5">
-			<h2 class="font-weight-bold text-center mb-3">Recapitulation</h2>
-			<div class="recapitulation-content">
-				<h3 class="text-center">Your cart is empty</h3>
-			</div>
-			<script type="text/html" id="recapitulation-empty-cart-template">
-				<h3 class="text-center">Your cart is empty</h3>
+	<div class="text-center alert-warning__wrapper">
+		<div class="container m-2 alert alert-warning alert-dismissible fade show d-inline-block" role="alert">
+			<div class="font-weight-bold">Before you start!</div>
+			<small>
+				This is just an example of e-commerce page using <a href="https://apicart.net" rel="noopener" target="blank"><strong>Apicart</strong></a> web components.<br>
+				Do not fill any real information into the forms, because in order to show Apicart functionality, they can be viewed by anyone in the testing administration.
+			</small>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<script>
+				document.querySelector('.alert-warning .close').addEventListener('click', () => {
+					document.querySelector('.alert-warning__wrapper').remove();
+				});
 			</script>
-			<script type="text/html" id="recapitulation-list-template">
-				<div>
-					<ul class="recapitulation-list list-group mb-4">%listItems%</ul>
-					<div class="text-right d-flex flex-column align-items-end">
-						<div class="recapitulation-list__summary-info">
-							<span>Tax base:</span>
-							<span>$%taxBase%</span>
-						</div>
-						<div class="recapitulation-list__summary-info">
-							<span>Vat:</span>
-							<span>$%vat%</span>
-						</div>
-						<div class="h5 recapitulation-list__summary-info">
-							<strong>Total:</strong>
-							<strong>$%totalPrice%</strong>
-						</div>
-					</div>
-				</div>
-			</script>
-			<script type="text/html" id="recapitulation-list-item-template">
-				<li class="recapitulation-list__item list-group-item d-flex flex-column flex-md-row justify-content-between align-items-center">
-					<span class="h5 mb-2 mb-md-0 recapitulation-list__item-name">%name%</span>
-					<span class="recapitulation-list__item-info d-flex align-items-center">
-						<span class="cart-item-quantity-form d-flex align-items-center">
-							<span class="cart-item-quantity-form__fields mr-2">
-								<a role="button" class="cart-item-quantity-button cart-item-quantity-button--minus">-</a>
-								<input class="cart-item-quantity-input" type="number" min="0" value="%quantity%" data-item-url="%itemUrl%">
-								<a role="button" class="cart-item-quantity-button cart-item-quantity-button--plus">+</a>
-							</span>
-							<span>
-								pcs
-							</span>
-						</span>
-						<strong class="h5 font-weight-bold mb-0 recapitulation-list__item-price">$%price%</strong>
-					</span>
-				</li>
-			</script>
-		</section>
-
-		<section class="mb-5">
-			<h2 class="font-weight-bold text-center mb-3">
-				Payment and delivery
-			</h2>
-			<form class="mb-3">
-				<div class="d-flex flex-column flex-sm-row">
-					<div class="mb-2 mb-sm-0 mr-sm-4 w-100">
-						<label class="mr-sm-2" for="shipping-methods">Delivery</label>
-						<select id="shipping-methods" class="custom-select" data-apicart-cart-parameter-key="shippingMethod.id">
-							<option disabled selected>---</option>
-						</select>
-					</div>
-
-					<div class="w-100">
-						<label class="mr-sm-2" for="payment-methods">Billing</label>
-						<select id="payment-methods" class="custom-select" data-apicart-cart-parameter-key="paymentMethod.id">
-							<option disabled selected>---</option>
-						</select>
-					</div>
-				</div>
-			</form>
-		</section>
-		<section class="mb-5">
-			<h2 class="text-center font-weight-bold mb-3">Contact information</h2>
-			<form>
-				<p>
-					<label for="shipping-address-email">E-mail</label>
-					<input id="shipping-address-email" type="email" class="form-control"  data-apicart-cart-parameter-key="shippingAddress.email">
-				</p>
-
-				<p class="d-flex flex-column flex-sm-row">
-					<span class="mb-2 mb-sm-0 mr-sm-4 w-100">
-						<label for="shipping-address-first-name">Name</label>
-						<input id="shipping-address-first-name" type="text" class="form-control" data-apicart-cart-parameter-key="shippingAddress.firstName">
-					</span>
-					<span class="w-100">
-						<label for="shipping-address-last-name">Surname</label>
-						<input id="shipping-address-last-name" type="text" class="form-control" data-apicart-cart-parameter-key="shippingAddress.lastName">
-					</span>
-				</p>
-
-				<p>
-					<label for="shipping-address-street-and-number">Street and number</label>
-					<input id="shipping-address-street-and-number" type="text" class="form-control" data-apicart-cart-parameter-key="shippingAddress.streetAndNumber">
-				</p>
-
-				<p class="d-flex flex-column flex-sm-row">
-					<span class="mb-2 mb-sm-0 mr-sm-4 w-100">
-						<label>Town</label>
-						<input type="text" class="form-control" data-apicart-cart-parameter-key="shippingAddress.city">
-					</span>
-					<span class="w-100">
-						<label>Zip</label>
-						<input type="number" class="form-control" data-apicart-cart-parameter-key="shippingAddress.zip">
-					</span>
-				</p>
-				<p class="text-center mt-2 mt-md-4">
-					<button class="finish-cart font-weight-bold btn btn-primary btn-lg">Finish order</button>
-				</p>
-			</form>
-		</section>
-		<div class="my-5 py-5">
-			<div class="text-center">
-				<div class="mb-3">
-					This website is a static website hosted via <a href="https://pages.github.com" target="_blank" rel="noopener"><strong>Github Pages</strong></a>.
-					See the <a href="https://github.com/apicart/sandbox.apicart.net" target="_blank" rel="noopener"><strong>repository</strong></a>!
-					<br>
-					<em>There is no extra validation on the forms as this page serves only as an example.</em>
-				</div>
-				<div>
-					<a href="https://github.com/apicart/sandbox.apicart.net/blob/master/assets/js/sandbox.js" target="_blank" rel="noopener" class="btn btn-outline-secondary font-weight-bold">Show me the code <i class="fas fa-chevron-circle-right"></i></a>
-				</div>
-			</div>
 		</div>
+	</div>
+
+	<main class="container-fluid my-5">
+		<div id="apicart"></div>
 	</main>
 
 	<footer class="text-center my-2 my-lg-5">
+		<div class="my-5">
+			<div class="text-center">
+				<div class="mb-3">
+					This website is a static website hosted via <a href="https://pages.github.com" target="_blank" rel="noopener"><strong>Github Pages</strong></a>.
+				</div>
+				<div>
+					<a href="https://github.com/apicart/sandbox.apicart.net" target="_blank" rel="noopener" class="btn btn-outline-secondary font-weight-bold">See the repository <i class="fas fa-chevron-circle-right"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="text-center mb-5">
+			<a href="https://apicart.slack.com/archives/CB9QSQRGX" target="blank" rel="noopener">
+				<img class="mb-2" lazy="true" src="/assets/images/slack-logo.png" width="80" alt="">
+				<h2 class="font-weight-bold">Join us on Slack!</h2>
+			</a>
+		</div>
 		<div class="text-center mb-3">
 			<a href="https://twitter.com/apicart_en?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-text="I have just tried Apicart Sandbox https://sandbox.apicart.net! E-commerce via API in 3 steps! @apicart_en #apicart #ecommerce #webdevelopment " data-show-count="false">Follow @apicart_en</a>
 			<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I have just tried Apicart Sandbox! E-commerce platform via API in a 3 steps! @apicart_en #apicart #ecommerce #webdevelopment " data-show-count="true">Tweet</a>
 			<a class="github-button" href="https://github.com/apicart/sandbox.apicart.net" data-show-count="true" data-size="large" aria-label="Star apicart/sandbox.apicart.net on GitHub">Star</a>
 		</div>
 		<span class="font-weight-bold">
-			&copy; 2018-2019
-			<a href="https://apicart.net" target="_blank" rel="noopener">
-				Apicart s.r.o.
-			</a>
+			&copy; 2018-2020
+			<a href="https://apicart.net" target="_blank" rel="noopener">Apicart s.r.o.</a>
 		</span>
 		|
 		<span class="font-weight-bold">
-			<a href="https://docs.apicart.net" target="blank" rel="noopener">
-				Documentation
-			</a>
+			<a href="https://apicart.net/en-us/products" target="blank" rel="noopener">Products</a>
 		</span>
 		|
 		<span class="font-weight-bold">
-			<a href="https://github.com/apicart/sandbox.apicart.net" target="blank" rel="noopener">
-				Sandbox Code
-			</a>
+			<a href="https://github.com/apicart/sandbox.apicart.net" target="blank" rel="noopener">Sandbox Code</a>
 		</span>
 	</footer>
 
-	<link onload="this.rel='stylesheet'" rel="alternate stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,800&display=swap&subset=latin-ext">
+	<script src="https://cdn.jsdelivr.net/gh/apicart/packages-js@master/packages/vue-components/dist/bundles/default/default.full.min.js"></script>
+	<script src="/assets/sandbox.js" async></script>
+
+	<link onload="this.rel='stylesheet'" rel="alternate stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=latin-ext">
 	<link onload="this.rel='stylesheet'" rel="alternate stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-	<script src="http://localhost:19085/packages/core-sdk/dist/core.js"></script>
-	<script src="http://localhost:19085/packages/payments-sdk/dist/payments.js"></script>
-	<script src="http://localhost:19085//packages/store-sdk/dist/store.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.27/bootstrap-native-v4.min.js"></script>
-	<script src="/assets/js/sandbox.js" async></script>
-
-	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	<script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
