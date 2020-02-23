@@ -3,12 +3,12 @@
 <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127787354-2"></script>
-<!-- 	<script>
+	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 		gtag('config', 'UA-127787354-2');
-	</script> -->
+	</script>
 
 	<meta charset="UTF-8">
 	<link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon.png">
@@ -70,7 +70,7 @@
 				<span aria-hidden="true">&times;</span>
 			</button>
 			<script>
-				document.querySelector('.alert-warning .close').addEventListener('click', () => {
+				document.querySelector('.alert-warning .close').addEventListener('click', function () {
 					document.querySelector('.alert-warning__wrapper').remove();
 				});
 			</script>
@@ -104,14 +104,14 @@
 			<a class="github-button" href="https://github.com/apicart/sandbox.apicart.net" data-show-count="true" data-size="large" aria-label="Star apicart/sandbox.apicart.net on GitHub">Star</a>
 		</div>
 		<span class="font-weight-bold">
-			&copy; 2018-2020
+			<span>&copy; 2018-2020</span>
 			<a href="https://apicart.net" target="_blank" rel="noopener">Apicart s.r.o.</a>
 		</span>
-		|
+		<span>|</span>
 		<span class="font-weight-bold">
 			<a href="https://apicart.net/en-us/products" target="blank" rel="noopener">Products</a>
 		</span>
-		|
+		<span>|</span>
 		<span class="font-weight-bold">
 			<a href="https://github.com/apicart/sandbox.apicart.net" target="blank" rel="noopener">Sandbox Code</a>
 		</span>
@@ -119,11 +119,10 @@
 
 	<script src="https://cdn.jsdelivr.net/gh/apicart/packages-js@master/packages/vue-components/dist/bundles/default/default.full.min.js"></script>
 	<script src="/assets/sandbox.js" async></script>
-
 	<link onload="this.rel='stylesheet'" rel="alternate stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=latin-ext">
 	<link onload="this.rel='stylesheet'" rel="alternate stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
 	<script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
+
 </body>
 </html>
