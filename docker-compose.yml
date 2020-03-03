@@ -1,0 +1,9 @@
+version: "3"
+services:
+  server:
+    container_name: apicart-sandbox-server
+    image: nginx:alpine
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+    ports:
+      - 19083:80
