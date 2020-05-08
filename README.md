@@ -9,5 +9,5 @@
 
 <h1><a href="https://sandbox.apicart.net">Try it now!</a></h1>
 <a href="https://sandbox.apicart.net">
-<img src="https://raw.githubusercontent.com/apicart/sandbox.apicart.net/master/assets/images/sandbox-screenshot.png" alt="Apicart sandbox preview"
+<img src="https://raw.githubusercontent.com/apicart/sandbox.apicart.net/master/assets/images/sandbox-screenshot.png" alt="Apicart JAMstack Sandbox preview"
 </a>
