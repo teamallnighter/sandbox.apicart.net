@@ -4,6 +4,9 @@ Apicart
 		store: new Apicart.Store({ token: '9mCu3DlBCa4REI?Q7kKly!Rw6!_FvD8K_dgPXe1b20?r6!sPTQMyCpq_ADt!jXOD' }),
 		payments: new Apicart.Payments({ token: 'Q84lNQyLl?nBGvKxxbcdc!nWFKEZrK?L_Is2r9IaOJo14ONbXw1SMlPIeptcaFza' }),
 		vueComponents: {
+			paymentMethodsList: {
+				allowedMethods: ['cash', 'bank-transfer']
+			},
 			cartDropdown: {
 				dropdownPosition: 'right'
 			},
