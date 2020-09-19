@@ -17,14 +17,12 @@ Apicart
             category: {
                 products: {
                     list: {
-                        clothes: {
+                        budder: {
                             new: [{
-                                    dataUrl: "https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/01/1.json",
-                                    pageUrl: "/green-t-shirt/",
+                                    dataUrl: "https://cdn.apicart.dev/external/vyqhp5m7fb2rgrcpocn1rzezr6pzsg88/data/DM/DME0002.json",
+                                    pageUrl: "/papaya-sorbet/",
                                 },
-                                "https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/02/2.json",
-                                "https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/03/3.json",
-                                "https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/04/4.json",
+                                "https://cdn.apicart.dev/external/vyqhp5m7fb2rgrcpocn1rzezr6pzsg88/data/DM/DME0001.json",
                             ],
                             discount: [
                                 "https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/04/4.json",
