@@ -35,19 +35,19 @@ Apicart
             localization: {
                 en: {
                     categories: {
-                        clothes: {
-                            title: "The best extracts",
-                            description: "Extracts",
-                            menu: "T-shirts",
-                            new: {
-                                title: "New collection",
-                                description: "T-shirts from our new collection.",
-                                menu: "New collection",
+                        Extracts: {
+                            title: "Extracts",
+                            description: "All Extracts",
+                            menu: "Extracts",
+                            budder: {
+                                title: "Budders",
+                                description: "Kelowna's best budder",
+                                menu: "Budder",
                             },
-                            discount: {
-                                title: "Dave's Master Extracts",
-                                description: "Clean and hig extracts",
-                                menu: "Discount",
+                            shadder: {
+                                title: "Shadder",
+                                description: "Kelownas best shadder",
+                                menu: "Shadder",
                             },
                         },
                     },
