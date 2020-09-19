@@ -19,17 +19,18 @@ Apicart
                     list: {
                         extracts: {
                             budder: [{
-                                    dataUrl: "https://cdn.apicart.dev/external/vyqhp5m7fb2rgrcpocn1rzezr6pzsg88/data/DM/DME0002.json",
-                                    pageUrl: "/papaya-sorbet/",
-                                },
-                                {
-                                    dataUrl: "https://cdn.apicart.dev/external/vyqhp5m7fb2rgrcpocn1rzezr6pzsg88/data/DM/DME0003.json",
-                                    pageUrl: "/mobey-dick/",
-                                },
-                            ],
+                                dataUrl: "https://cdn.apicart.dev/external/vyqhp5m7fb2rgrcpocn1rzezr6pzsg88/data/DM/DME0002.json",
+                                pageUrl: "/papaya-sorbet/",
+                            }, {
+                                dataUrl: "https://cdn.apicart.dev/external/vyqhp5m7fb2rgrcpocn1rzezr6pzsg88/data/DM/DME0003.json",
+                                pageUrl: "/mobey-dick/",
+                            }],
                             shadder: [{
                                 dataUrl: "https://cdn.apicart.dev/external/vyqhp5m7fb2rgrcpocn1rzezr6pzsg88/data/DM/DME0001.json",
-                                pageUrl: "/legendary-haze/",
+                                pageUrl: "/shatter//legendary-haze/",
+                            }, {
+                                dataUrl: "https://cdn.apicart.dev/external/vyqhp5m7fb2rgrcpocn1rzezr6pzsg88/data/DM/DME-S-0002.json",
+                                pageUrl: "/shatter/mango-taffy/",
                             }],
                         },
                     },
