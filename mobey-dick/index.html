@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127787354-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "UA-127787354-2");
+    </script>
+
+    <meta charset="UTF-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/images/favicons/site.webmanifest" />
+    <link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#6154bc" />
+    <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-config" content="/assets/images/favicons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+        Apicart Product detail Vue.js component | Apicart JAMstack Sandbox
+    </title>
+    <meta name="description" content="Examples of product detail page using Apicart Vue.js components!" />
+
+    <meta property="og:image" content="https://sandbox.apicart.net/assets/images/apicart-image.png" />
+    <meta property="og:title" content="Apicart Product detail Vue.js component | Apicart JAMstack Sandbox" />
+    <meta property="og:url" content="https://sandbox.apicart.net/" />
+    <meta property="og:site_name" content="Apicart JAMstack Sandbox" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://sandbox.apicart.net/" />
+    <meta name="twitter:title" content="Apicart Product detail Vue.js component | Apicart JAMstack Sandbox" />
+    <meta name="twitter:description" content="Examples of product detail page using Apicart Vue.js components!" />
+    <meta name="twitter:image" content="https://sandbox.apicart.net/assets/images/apicart-image.png" />
+    <meta name="twitter:site" content="@apicart_en" />
+    <meta name="twitter:creator" content="@apicart_en" />
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/sandbox.css" />
+
+    <header class="top-header border-bottom">
+        <nav class="navbar navbar-default-top py-4 px-0">
+            <div class="container-fluid">
+                <div class="navbar-header w-100 d-inline-flex align-items-center justify-content-between">
+                    <h1>
+                        <img class="logo align-middle" lazy="true" src="/assets/images/apicart-image.png" alt="" />
+                        <a href="/" class="logo-text align-middle"> </a>
+                    </h1>
+                    <div id="apicart-cart-dropdown" class="cart-dropdown__wrapper"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--- APICART --->
+
+    <main class="container-fluid my-5">
+        <!-- You can remove the button and replace it by whatever you want -->
+        <a href="/" class="btn btn-outline-secondary font-weight-bold mb-4">
+            <i class="fas fa-chevron-circle-left"></i> Back to homepage
+        </a>
+
+        <div id="apicart"></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@apicart/vue-components@1.0.0-alpha6/dist/bundles/default/default.full.min.js"></script>
+    <script>
+        Apicart.configure({
+            vueComponents: {
+                // When product detail is set before the bundle is initialized
+                // the product detail with the given URL will be rendered
+                productDetail: {
+                    dataUrl: "https://cdn.apicart.dev/external/vyqhp5m7fb2rgrcpocn1rzezr6pzsg88/data/DM/DME0003.json",
+                },
+            },
+        });
+    </script>
+    <script src="/assets/sandbox.js" async></script>
+
+    <!--- /APICART --->
+
+    <link onload="this.rel='stylesheet'" rel="alternate stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=latin-ext" />
+    <link onload="this.rel='stylesheet'" rel="alternate stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+    <script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+
+</html>
